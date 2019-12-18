@@ -6,20 +6,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.net.ssl.SSLContext;
-
 public class App {
 
 	public static void main(String[] args) throws Exception {
-		System.out.println("hello comint to main atleast");
+		
 
 		try {
-			Class.forName("com.mysql.jdbc.Driver");			
-			SSLContext sc = SSLContext.getInstance("TLSv1");
+			Class.forName("com.mysql.cj.jdbc.Driver");			
+			
 			Connection con = getConnection();
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery("select * from COMPANY_ROLES limit 2");
-			System.out.println(rs.getFetchSize());
+			
 			while(rs.next()) {
 				System.out.println(rs.getString(1));
 			}
