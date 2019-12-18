@@ -36,7 +36,7 @@ public class App {
 		String port = "3306";
 		String database = "roleManagementDB ";
 		String username = "metadata_user";
-		String password = "Datalake@123";
+		String password = "<password>";
 		String dbUrl = "jdbc:mysql://" + host + ":" + port + "/" + database	+"?verifyServerCertificate=true&useSSL=true&requireSSL=true&enabledTLSProtocols=TLSv1.2";
 		return DriverManager.getConnection(dbUrl, username, password);
 	}
